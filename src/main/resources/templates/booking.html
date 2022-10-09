@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
@@ -9,7 +8,6 @@
 <!-- index.html 고유 CSS 추가 -->
 <th:block layout:fragment="css">
     <!--    <link rel="stylesheet" th:href="@{/css/page/home.css}" >-->
-    <title>항공편 검색</title>
     <link rel="stylesheet" th:href="@{/css/booking.css}">
     <link rel="stylesheet" th:href="@{/css/purchase.css}">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +31,7 @@
             <div class="select">
                 <p><span th:text="${ticket[0].departlocation}"></span><span>-</span><span
                         th:text="${ticket[0].arrivallocation}"></span></p>
-                <span>인원 : </span><span class="peoplenum" th:text="${peoplenum}"></span>
+                <span>인원 : </span><span class="peoplenum" id="peoplenum" th:text="${peoplenum}"></span>
             </div>
             <div class="dateinfo">
                 <span th:text="${'출발일 : '+ ticket[0].departdate}"></span>

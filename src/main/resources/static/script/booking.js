@@ -2,7 +2,7 @@ $(document).ready(function () {
     $(".header_wrap").remove();
 
     var key = $(".key").val();
-    var people = $("#select>.peoplenum").text();
+    var people = $(".select>#peoplenum").text();
     // var people1 = $(".peoplenum").text();
     // console.log(people1)
     console.log(key)
@@ -57,13 +57,15 @@ $(document).ready(function () {
             success : function (data) {
                 var obj = JSON.parse(data);
 
-                console.log(data);
+
                 console.log(JSON.parse(data));
+                console.log(obj[0].price * people);
+                console.log(people);
                 // JSON.parse(data);
                 $("#content-book").hide();
                 $("#content").show();
-               $("#price").text(addComma(obj[0].price * people)+' 원');
-                $("#totalprice").text(addComma(obj[0].price * people)+' 원');
+                $("#price").text(addComma(obj[0].price * people) +' 원');
+                $("#totalprice").text(addComma(obj[0].price  * people) +' 원');
                 for (var i = 1; i<people; i++) {
                     var ticketinfo = $("#addpeoplenum").clone(true);
                     $("#addpeoplenum").after(ticketinfo);
@@ -102,8 +104,8 @@ $(document).ready(function () {
 
                 $("#content-book").hide();
                 $("#content").show();
-                addComma($("#price").text(addComma((data[0].price+ data[1].price) * people) +' 원'));
-                addComma($("#totalprice").text(addComma((data[0].price+ data[1].price) * people) +' 원'));
+                $("#br-price").text(addComma((data[0].price+ data[1].price) * people) +' 원');
+                $("#totalprice").text(addComma((data[0].price+ data[1].price) * people) +' 원');
                 for (var i = 1; i<people; i++) {
                     var ticketinfo = $("#addpeoplenum").clone(true);
                     $("#addpeoplenum").after(ticketinfo);

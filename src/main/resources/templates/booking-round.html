@@ -32,10 +32,10 @@
             <div class="select">
                 <p><span th:text="${ticket[0].departlocation}"></span><span>-</span><span
                         th:text="${ticket[0].arrivallocation}"></span></p>
-                <span>인원 : </span><span class="peoplenum" th:text="${peoplenum}"></span>
+                <span>인원 : </span><span class="peoplenum" id="peoplenum" th:text="${peoplenum}"></span>
             </div>
-            <div id="dateinfo">
-                <span th:text="${'가는 날 : ' + ticket[0].departdate}"></span>
+            <div class="dateinfo">
+                <span th:text="${'가는 날 : ' + ticket[0].departdate}"></span><br>
                 <span th:text="${'오는 날 : '+ ticketround[0].departdate}"></span>
             </div>
         </div>
@@ -115,10 +115,14 @@
     <div id="content">
         <div class="top-menu">
             <img src="/images/3512613_boarding pass_flight_journey_plane_ticket_icon.png" alt="검색">
-            <div id="select">
+            <div class="select">
                 <p><span th:text="${ticket[0].departlocation}"></span><span>-</span><span
                         th:text="${ticket[0].arrivallocation}"></span></p>
                 <span>인원 : </span><span class="peoplenum" th:text="${peoplenum}"></span>
+            </div>
+            <div class="dateinfo">
+                <span th:text="${'가는 날 : ' + ticket[0].departdate}"></span><br>
+                <span th:text="${'오는 날 : '+ ticketround[0].departdate}"></span>
             </div>
         </div>
         <div id="userinfo">

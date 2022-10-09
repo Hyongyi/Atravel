@@ -4,7 +4,7 @@ var chkname = /^[가-힣]{2,4}$/;
 var chkNum = /^[0-9]+$/;
 
 $(document).ready(function () {
-
+    $("#menu").remove();
     var id = $("#input-id").val();
     var pw = $("#input-pw").val();
     var pw_confirm = $("#input-pw-confirm").val();

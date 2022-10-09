@@ -1,35 +1,30 @@
+
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/default_layout}">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/signup.css">
+<!-- index.html 고유 CSS 추가 -->
+<th:block layout:fragment="css">
+    <!--    <link rel="stylesheet" th:href="@{/css/page/home.css}" >-->
+    <link rel="stylesheet" th:href="@{/css/signup.css}">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="/script/signup.js"></script>
+</th:block>
+<!-- index.html 고유 스크립트 추가 -->
+<th:block layout:fragment="script">
+    <!--    <script th:src="@{/js/page/home.js}"></script>-->
+    <script th:src="@{https://code.jquery.com/jquery-3.6.0.js}"></script>
+    <script th:src="@{/script/signin.js}"></script>
+    <script th:src="@{/script/js.cookie.js}"></script>
+</th:block>
 
-</head>
+<!-- Content -->
+<div layout:fragment="content">
 
-<body>
-<div id="top_head">
-    <div class="wrap">
-        <a sec:authorize="isAnonymous()" th:href="@{/user/signin}">로그인</a>
-        <a sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a>
-        <a sec:authorize="isAnonymous()" th:href="@{/user/signup}">회원가입</a>
-        <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/admin}">어드민</a>
-    </div>
-</div>
-<div id="wrap">
-    <header id="header" class="clearfix">
-        <div id="header-logo">
-            <a href="/"><img src="/images/A TRAVEL 로고.svg" alt="로고"></a>
-        </div>
-        <div class="header_wrap ">
-        </div>
-    </header>
     <div id="content">
         <form id="join" th:action="@{/user/signup}" method="post">
             <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
@@ -76,6 +71,44 @@
             </div>
         </form>
     </div>
+</div>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/signup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="/script/signup.js"></script>
+
+</head>
+
+<body>
+<div id="top_head">
+    <div class="wrap">
+        <a sec:authorize="isAnonymous()" th:href="@{/user/signin}">로그인</a>
+        <a sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a>
+        <a sec:authorize="isAnonymous()" th:href="@{/user/signup}">회원가입</a>
+        <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/admin}">어드민</a>
+    </div>
+</div>
+<div id="wrap">
+    <header id="header" class="clearfix">
+        <div id="header-logo">
+            <a href="/"><img src="/images/A TRAVEL 로고.svg" alt="로고"></a>
+        </div>
+        <div class="header_wrap ">
+        </div>
+    </header>
+
 
 </div>
 
