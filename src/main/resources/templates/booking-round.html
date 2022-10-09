@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>항공편 검색</title>
+    <link rel="stylesheet" href="/css/booking.css">
+    <link rel="stylesheet" href="/css/purchase.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+<div id="top_head">
+    <div class="wrap">
+        <a sec:authorize="isAnonymous()" th:href="@{/user/signin}">로그인</a>
+        <a sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a>
+        <a sec:authorize="isAnonymous()" th:href="@{/user/signup}">회원가입</a>
+        <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/admin}">어드민</a>
+    </div>
+</div>
+<header id="header" class="clearfix">
+    <div id="header-logo">
+        <a href="/"><img src="/images/A TRAVEL 로고.svg" alt="로고"></a>
+    </div>
+</header>
+<div id="content-book">
+    <div id="top-menu">
+        <img src="/images/search icon.png" alt="검색">
+        <div>
+            <p><span>인천</span><span>-</span><span>제주도</span></p>
+            <span>인원 : </span><span class="peoplenum" th:text="${peoplenum}"></span>
+        </div>
+    </div>
+    <div id="itinery-list">
+        <section id="section-tab">
+            <button id="recommendation" >
+                <p>추천순</p>
+                <p class="tab-price" th:text="${#numbers.formatInteger(peoplenum * (ticket[0].price + ticketround[0].price), 0, 'COMMA') + '원'}"></p>
+            </button>
+            <button id="cheapest">
+                <p>최저가</p>
+                <p class="tab-price" th:text="${#numbers.formatInteger(peoplenum * (ticket[0].price + ticketround[0].price), 0, 'COMMA') + '원'}"></p>
+            </button>
+            <button id="shortest">
+                <p>최단여행시간</p>
+                <p class="tab-price" th:text="${#numbers.formatInteger(peoplenum * (ticketRH[0].price + ticketH[0].price), 0, 'COMMA') + '원'}"></p>
+            </button>
+        </section>
+
+            <div class="itinery" th:each="ticket : ${ticket}">
+                <button type="submit" class="ticket-round" th:each="ticketR : ${ticketround}">
+                    <div class="ticket-list" >
+                        <img src="/images/AIRLINE.svg" alt="airline">
+                        <div class="ticket-content-left tkR">
+                            <input class="key1" name="key1" th:value="${ticket.id}"/>
+                            <p class="ticketR-left" th:text="${ticket.departtime}">5:00</p>
+                            <p th:text="${ticket.departlocation}">JEJ</p>
+                        </div>
+                        <div class="ticket-content-middle tkR">
+                            <p class="ticket-middle" th:text="${ticket.flighthour + 'hours'}">4시간</p>
+                            <p class="ticket-middle">
+                                <img src="/images/6875967_flight_fly_plane_icon.png" alt="비행기">
+                            </p>
+                            <p class="ticket-middle">직항</p>
+                        </div>
+                        <div class="ticket-content-right tkR">
+                            <p class="ticketR-right" th:text="${ticket.arrivaltime}">2:00</p>
+                            <p th:text="${ticket.arrivallocation}">ICN</p>
+                        </div>
+
+                        <div class="ticket-content-left tkR">
+                            <input class="key2" name="key2" th:value="${ticketR.id}"/>
+                            <p class="ticketR-left" th:text="${ticketR.departtime}">5:00</p>
+                            <p th:text="${ticketR.departlocation}">JEJ</p>
+                        </div>
+                        <div class="ticket-content-middle tkR">
+                            <p class="ticket-middle" th:text="${ticketR.flighthour + 'hours'}">4시간</p>
+                            <p class="ticket-middle">
+                                <img src="/images/6875967_flight_fly_plane_icon.png" alt="비행기" id="return">
+                            </p>
+                            <p class="ticket-middle">직항</p>
+                        </div>
+                        <div class="ticket-content-right tkR">
+                            <p class="ticketR-right" th:text="${ticketR.arrivaltime}">2:00</p>
+                            <p th:text="${ticketR.arrivallocation}">ICN</p>
+                        </div>
+                    </div>
+
+                    <div class="ticket-price-round">
+                        <p class="ticket-middle" th:text="${'₩' + #numbers.formatInteger(peoplenum * (ticketR.price + ticket.price), 0, 'COMMA')}">asd</p>
+                    </div>
+                </button>
+            </div>
+
+    </div>
+
+    <div id="content-bottom">
+        <p>요금은 매일 갱신됩니다.<span> 예약 시기에 따라 비행기 요금이 달라질 수 있습니다. </span></p>
+        <p>체크인 수하물이 있습니까? <span> 예약 시기에 따라 비행기 요금이 달라질 수 있습니다.</span></p>
+    </div>
+</div>
+<div id="content" >
+    <div id="top-menu">
+        <img src="/images/3512613_boarding pass_flight_journey_plane_ticket_icon.png" alt="검색">
+        <div id="select">
+            <p><span th:text="${ticket[0].departlocation}"></span><span>-</span><span th:text="${ticket[0].arrivallocation}"></span></p>
+            <span>인원 : </span><span class="peoplenum" th:text="${peoplenum}"></span>
+        </div>
+    </div>
+    <div id="userinfo" >
+        <div class="ticket-info" >
+            <div class="ticket-info-span">
+                <span th:text="${ticket[0].departlocation}"></span><span>-</span><span th:text="${ticket[0].arrivallocation}"></span><br>
+                <span>인원 : </span><span class="peoplenum" th:text="${peoplenum}"></span><span> | </span></span><span> 모든 출발/도착 시간은 현지 시간 기준입니다</span>
+            </div>
+        </div>
+        <div id="addpeoplenum">
+            <div class="userinfo-inline">
+                <p>사용자 예약정보</p>
+                <div class="userinfo-top">
+                    <p>성<span class="necess">*</span><span class="span-name">이름<span class="necess">*</span></span></p>
+                    <input type="text" class="firstname" placeholder="ex)홍" name="first_name">
+                    <input type="text" class="lastname" placeholder="ex)길동" name="last_name">
+                </div>
+                <div class="userinfo-middle">
+                    <div>
+                        <p>성별<span class="necess">*</span></p>
+                        <select name="sex" class="sex">
+                            <option value="male">남</option>
+                            <option value="female">여</option>
+                        </select>
+                        <p class="warning">성별을 입력해주세요.</p>
+                    </div>
+                    <div>
+                        <p>국적<span class="necess">*</span></p>
+                        <select name="nationality" class="nationality">
+                            <option value="southkorea">대한민국</option>
+                            <option value="america">미국</option>
+                            <option value="japan">일본</option>
+                            <option value="china">중국</option>
+                            <option value="france">프랑스</option>
+                            <option value="italy">이탈리아</option>
+                            <option value="philp">필리핀</option>
+                            <option value="maleysia">말레이시아</option>
+                            <option value="british">영국</option>
+                            <option value="vietnam">베트남</option>
+                            <option value="tailand">태국</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="userinfo-bottom">
+                    <p>여권번호<span class="necess">*</span><span class="span-passex">여권 유효기간<span
+                            class="necess">*</span></span></p>
+                    <input type="text" class="passport" placeholder="ex)M123*****" name="passport">
+                    <input type="date" class="duedate" data-placeholder="ex)20320104" required aria-required="true">
+                </div>
+                <div class="userinfo-footer">
+                    <p>연락처<span class="necess">*</span><span class="span-email">이메일<span class="necess">*</span></span>
+                    </p>
+                    <input type="text" class="phone-num" placeholder="ex)000-0000-0000" name="phonenum">
+                    <input type="text" class="email" placeholder="atravel@atravel.com" name="email">
+                </div>
+                <!--                <div class="user_plus">-->
+                <!--                    <button type="button" class="addpeople" id="addpeople">-->
+                <!--                        <img src="/images/3994437_add_create_new_plus_positive_icon.png" alt="추가버튼">-->
+                <!--                    </button>-->
+                <!--                    <p>탑승자 추가하기</p>-->
+                <!--                </div>-->
+            </div>
+        </div>
+
+        <div id="bottom-menu">
+            <div id="bottom-menu-outline">
+                <p>요금 상세정보</p>
+                <p><span>탑승객</span><span class="span-right" th:text="${' 인원 : ' + peoplenum}"></span></p>
+                <p><span>항공운임</span><span class="span-right" id="price"></span></p>
+                <hr>
+                <p id="total"><span>총 금액</span><span class="span-right" id="totalprice"></span></p>
+            </div>
+        </div>
+        <button id="purchase">결제하기</button>
+    </div>
+</div>
+<footer id="footer" class="clearfix">
+    <div class="wrap">
+        <div id="foot1">
+            <div id="footer-img">
+                <a href="#"><img src="/images/facebook.svg" alt="페이스북"></a>
+                <a href="#"><img src="/images/instagram.svg" alt="인스타그램"></a>
+                <a href="#"><img src="/images/twitter.svg" alt="트위터"></a>
+            </div>
+        </div>
+        <div id="foot2">
+            <select id="family_select">
+                <option selected disabled>패밀리사이트</option>
+                <option>패밀리사이트1</option>
+                <option>패밀리사이트2</option>
+                <option>패밀리사이트3</option>
+            </select>
+        </div>
+        <div id="foot3">
+            <p>© 2022 A Travel, Inc., A 계열사. All rights reserved. A Travel 및 비행기 로고는 A Travel, Inc.의 상표 또는 등록
+                상표입니다.
+                A Travel 주식회사, 사업자등록번호: 000-00-00000
+                A Travel 주식회사, 서울특별시 상상구 공상3길 10(상상동). 사업자등록번호: 000-00-00000. 대표이사: 성효영<br>
+                관광사업자등록번호: 제2099-000001호
+                통신판매업신고번호: 2099-서울공상-9999호</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="/script/booking.js"></script>
+</body>
+
+</html>

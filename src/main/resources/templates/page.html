@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/default_layout}">
+
+<!-- index.html 고유 CSS 추가 -->
+<th:block layout:fragment="css">
+  <!--    <link rel="stylesheet" th:href="@{/css/page/home.css}" >-->
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
+</th:block>
+<!-- index.html 고유 스크립트 추가 -->
+<th:block layout:fragment="script">
+  <!--    <script th:src="@{/js/page/home.js}"></script>-->
+  <script th:src="@{https://code.jquery.com/jquery-3.6.0.js}"></script>
+  <script th:src="@{/script/style.js}"></script>
+</th:block>
+
+<!-- Content -->
+<div layout:fragment="content">
+  <div id="back">
+    <h1 id="catch">당신의 여행을 시작하세요</h1>
+  </div>
+  <form action="/booking" method="get" id="formId">
+    <div class="wrap_banner">
+      <section id="bookingwrap">
+        <div id="bookingform">
+          <div id="booking-tab">
+            <div class="checks">
+              <div id="div-one-way">
+                <input type="radio" name="way" id="one-way" value="one-way" checked>
+                <label for="one-way">편도</label>
+              </div>
+              <div id="div-round-tirp">
+                <input type="radio" name="way" id="round-trip" value="round-trip">
+                <label for="round-trip">왕복</label>
+              </div>
+            </div>
+          </div>
+          <div id="deaprt-from">
+            <label for="departures">출발</label>
+            <input type="text" list="select-deaprt-from" id="departures" placeholder="선택"
+                   name="departlocation">
+            <datalist name="list" id="select-deaprt-from">
+              <optgroup label="domestic">
+                <option value="ICN">인천/김포</option>
+                <option value="JEJ">제주</option>
+                <option value="BUS">부산(김해)</option>
+                <option value="KMP">김포</option>
+                <option value="INC">인천</option>
+                <option value="GJU">광주</option>
+                <option value="DAE">대구</option>
+                <option value="ULS">울산</option>
+              </optgroup>
+              <optgroup label="national">
+                <option value="SNG">중국/상하이</option>
+                <option value="MEL">호주/멜버른</option>
+                <option value="TOK">일본/도쿄</option>
+                <option value="MAN">필리핀/마닐라</option>
+                <option value="NYC">미국/뉴욕</option>
+                <option value="LON">영국/런던</option>
+                <option value="PAS">프랑스/파리</option>
+              </optgroup>
+            </datalist>
+          </div>
+          <button type="button" id="swap"><img src="images/swap.svg" alt="스왑버튼"> </button>
+          <div id="deaprt-to">
+            <label for="arrivals">도착</label>
+            <input type="text" list="select-deaprt-to" id="arrivals" placeholder="선택"
+                   name="arrivallocation">
+            <datalist name="list" id="select-deaprt-to">
+              <optgroup label="domestic">
+                <option value="ICN">인천/김포</option>
+                <option value="JEJ">제주</option>
+                <option value="BUS">부산(김해)</option>
+                <option value="KMP">김포</option>
+                <option value="INC">인천</option>
+                <option value="GJU">광주</option>
+                <option value="DAE">대구</option>
+                <option value="ULS">울산</option>
+              </optgroup>
+              <optgroup label="national">
+                <option value="SNG">중국/상하이</option>
+                <option value="MEL">호주/멜버른</option>
+                <option value="TOK">일본/도쿄</option>
+                <option value="MAN">필리핀/마닐라</option>
+                <option value="NYC">미국/뉴욕</option>
+                <option value="LON">영국/런던</option>
+                <option value="PAS">프랑스/파리</option>
+              </optgroup>
+            </datalist>
+          </div>
+          <div id="deaprt-date">
+            <label for="input-deaprt-date">가는날</label>
+            <input type="date" id="input-deaprt-date" value="" name="departdate">
+          </div>
+          <div id="return-date">
+            <label for="input-return-date" id="label-return-date">오는날</label>
+            <input type="date" id="input-return-date" value="" name="returndate">
+          </div>
+
+          <div id="deaprt-people">
+            <label for="input-peoplenum">인원</label>
+            <input type="number" id="input-peoplenum" name="peoplenum" min="1" max="100" value="1">
+          </div>
+        </div>
+        <p class="warning">출발지를 입력해주세요.</p>
+        <input type="button" id="search" value="항공권 검색">
+  </form>
+  </section>
+  <section id="banner">
+    <h2 id="reco">추천 여행지</h2>
+    <ul>
+      <li>
+        <div>
+          <h2>따사로운 햇살이 내리는</h2>
+          <h1>'MALDIVES'</h1>
+          <button type="button" onclick="location.href='#'">예약하기</button>
+          <img src="images/maldives-1993704.jpg" alt="몰디브해변">
+        </div>
+      </li>
+      <li>
+        <div>
+          <h2>유럽의 향기가 물씬 풍기는</h2>
+          <h1>'UNITED KINDOM'</h1>
+          <button type="button" onclick="location.href='#'">예약하기</button>
+          <img src="images/hamburg-3846525.jpg" alt="런던브릿지">
+        </div>
+      </li>
+      <li>
+        <div>
+          <h2>전통이 살아 숨쉬는 </h2>
+          <h1>'KOREA'</h1>
+          <button type="button" onclick="location.href='#' ">예약하기</button>
+          <img src="images/korean-wildlife.jpg" alt="국내절벽">
+        </div>
+      </li>
+      <li>
+        <div>
+          <h2>고요하고 평온한 나라</h2>
+          <h1>'AUSTRIA'</h1>
+          <button type="button" onclick="location.href='#' ">예약하기</button>
+          <img src="images/hallstatt-3609863.jpg" alt="할슈타드">
+        </div>
+      </li>
+    </ul>
+  </section>
+  <div id="content" class="clearfix">
+    <div id="content-img">
+      <h2 id="special">특가 상품</h2>
+      <div id="cont1">
+        <a href="#"><img src="images/giraffe-2191662.jpg" alt="아프리카">
+          <p>자연이 살아 숨쉬는 아프리카</p>
+          <span>412,000원~</span>
+        </a>
+      </div>
+      <div id="cont2">
+        <a href="#"><img src="images/mosque-615415.jpg" alt="인도">
+          <p>인도에서 명상과 치유의 시간을</p>
+          <span>305,000원~</span>
+        </a>
+      </div>
+      <div id="cont3">
+        <a href="#"><img src="images/train-3758523.jpg" alt="러시아">
+          <p>눈길을 가르며 대륙을 횡단</p>
+          <span>612,000원~</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  </form>
+  <div id="info">
+    <h2>공지사항</h2>
+    <div id="info-box">
+
+    </div>
+  </div>
+  <div id="service">
+    <h2>서비스 추가</h2>
+    <div class="service-box"></div>
+    <div class="service-box"></div>
+    <div class="service-box"></div>
+    <div class="service-box"></div>
+    <div class="service-box"></div>
+  </div>
+  <div id="help_outline">
+    <div id="call-center">
+    </div>
+  </div>
+</div>
+</div>
+</html>
