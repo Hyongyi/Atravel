@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    $(".header_wrap").remove();
+
     var key = $(".key").val();
     var people = $("#select>.peoplenum").text();
     // var people1 = $(".peoplenum").text();
@@ -76,8 +78,8 @@ $(document).ready(function () {
     $(".itinery>.ticket-round").click(function() {
         var ticketnoA = $(this).find(".key1").val();
         var ticketnoB = $(this).find(".key2").val();
-        sessionStorage.setItem("ticketnoA", Round1);
-        sessionStorage.setItem("ticketnB", Round2);
+        sessionStorage.setItem("Round1", ticketnoA);
+        sessionStorage.setItem("Round2", ticketnoB);
         sessionStorage.setItem("peoplenum", people);
         console.log(sessionStorage.getItem("Round1"));
         console.log(sessionStorage.getItem("Round2"));
@@ -94,11 +96,14 @@ $(document).ready(function () {
 
             type: "GET",                             // HTTP 요청 방식(GET, POST)
             success : function (data) {
+
                 console.log(data);
+                console.log(data[0].price);
+
                 $("#content-book").hide();
                 $("#content").show();
-                addComma($("#price").text(addComma(data[0].price+ data[1].price) * people+' 원'));
-                addComma($("#totalprice").text(addComma(data[0].price+ data[1].price) * people+' 원'));
+                addComma($("#price").text(addComma((data[0].price+ data[1].price) * people) +' 원'));
+                addComma($("#totalprice").text(addComma((data[0].price+ data[1].price) * people) +' 원'));
                 for (var i = 1; i<people; i++) {
                     var ticketinfo = $("#addpeoplenum").clone(true);
                     $("#addpeoplenum").after(ticketinfo);

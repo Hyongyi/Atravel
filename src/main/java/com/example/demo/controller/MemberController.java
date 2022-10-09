@@ -46,8 +46,6 @@ public class MemberController {
 //     메인 페이지
 
 
-
-
     @GetMapping("/")
     public String index() {
         return "/page";
@@ -129,6 +127,7 @@ public class MemberController {
             model.addAttribute("depart", departlocation);
             model.addAttribute("arrival", arrivallocation);
             model.addAttribute("peoplenum", peoplenum);
+            model.addAttribute("departdate", departdate);
             return "/none";
         }
         model.addAttribute("ticket", travelDTO);
@@ -147,6 +146,7 @@ public class MemberController {
             model.addAttribute("depart", departlocation);
             model.addAttribute("arrival", arrivallocation);
             model.addAttribute("peoplenum", peoplenum);
+            model.addAttribute("departdate", departdate);
             return "/none";
         }
         System.out.println("-----"+travelDTO);

@@ -37,7 +37,7 @@ public class SecurityConfig  {
     @Bean
     // static 디렉터리의 하위 파일 목록은 인증 무시 ( = 항상통과 )
     public WebSecurityCustomizer webSecurityCustomizer() {
-        return (web) -> web.ignoring().antMatchers("/css/**", "/script/**", "/images/**", "/resource/**");
+        return (web) -> web.ignoring().antMatchers("/css/**", "/script/**", "/images/**", "/resource/**", "/fragments/**", "/layouts/**");
     }
 
     @Bean

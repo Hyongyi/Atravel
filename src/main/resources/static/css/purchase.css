@@ -48,14 +48,6 @@ input[type='date']:valid::before {
 
 
 
-/* top menu */
-#top-menu {width: 100%; height: 70px; background-color:  #00005e; }
-#top-menu>img {width: 40px; float: left; margin: 15px; }
-#top-menu>div{width: 300px;  float: left; font-size: 18px; padding: 10px 5px;}
-#top-menu>div span{color: white;}
-
-
-
 /* content */
 #content{width: 1000px; height:100%; margin: 0 auto; background-color: whitesmoke; padding-bottom: 100px;}
 #content-bottom { margin-left: 40px; width: 100%; height: 100px; float: left; margin-top: 50px;}
@@ -106,13 +98,16 @@ hr{border: dashed 1px white; width: 500px; margin:10px 0px;}
 #bottom-menu-outline>p {padding: 5px; width: 500px;}
 #bottom-menu-outline>p:first-child {font-size: 28px; color: white; padding-bottom: 10px; padding-left: 0;}
 
-#bottom-menu-outline>p>span:first-child {margin-right:300px}
-.span-num {margin-left: 17px;}
+#bottom-menu-outline>p>span:first-child {margin-right:280px}
+.span-num {margin-left: 45px;}
 .span-tot {margin-left: -10px;}
 /* price tab */
 
 #price-tab { width: 800px; margin: 50px auto; display: inline-block;}
 #span-right {float: right;}
+#br-people {margin-left: 70px;}
+#price {margin-left: 10px;}
+#br-price { margin-left:20px;}
 
 /* purchase */
 
