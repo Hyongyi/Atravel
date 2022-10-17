@@ -128,10 +128,31 @@
         <div id="userinfo">
             <div class="ticket-info">
                 <div class="ticket-info-span">
-                    <span th:text="${ticket[0].departlocation}"></span><span>-</span><span
+                    <span th:text="${ticket[0].departlocation}"></span><span>-</span ><span
                         th:text="${ticket[0].arrivallocation}"></span><br>
-                    <span>인원 : </span><span class="peoplenum" th:text="${peoplenum}"></span><span> | </span></span>
+                    <span>인원 : </span><span class="peoplenum" th:text="${peoplenum}"></span><span> | </span></span></br>
                     <span> 모든 출발/도착 시간은 현지 시간 기준입니다</span>
+                </div>
+            </div>
+            <div class="R-ticket">
+                <img src="/images/AIRLINE.svg" alt="airline">
+                <div class="R-ticket-list">
+                    <div class="ticket-content-left tk">
+                        <input class="key" name="key"/>
+                        <p class="ticket-left">6시 36뷴</p>
+                        <p name="departlocation">멜버른</p>
+                    </div>
+                    <div class="ticket-content-middle tk">
+                        <p class="ticket-middle">12시간 30분</p>
+                        <p class="ticket-middle">
+                            <img src="/images/6875967_flight_fly_plane_icon.png" alt="비행기">
+                        </p>
+                        <p class="ticket-middle">직항</p>
+                    </div>
+                    <div class="ticket-content-right tk">
+                        <p class="ticket-right">5시30분</p>
+                        <p name="arrivallocation">서울</p>
+                    </div>
                 </div>
             </div>
             <div id="addpeoplenum">

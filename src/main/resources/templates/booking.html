@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
@@ -42,15 +41,18 @@
                 <section id="section-tab">
                     <button type="submit" id="recommendation">
                         <p>추천순</p>
-                        <p class="tab-price" th:text="${#numbers.formatInteger(peoplenum * ticket[0].price, 0, 'COMMA') + '원'}"></p>
+                        <p class="tab-price"
+                           th:text="${#numbers.formatInteger(peoplenum * ticket[0].price, 0, 'COMMA') + '원'}"></p>
                     </button>
                     <button type="submit" id="cheapest">
                         <p>최저가</p>
-                        <p class="tab-price" th:text="${#numbers.formatInteger(peoplenum * ticket[0].price, 0, 'COMMA') + '원'}"></p>
+                        <p class="tab-price"
+                           th:text="${#numbers.formatInteger(peoplenum * ticket[0].price, 0, 'COMMA') + '원'}"></p>
                     </button>
                     <button type="submit" id="shortest">
                         <p>최단여행시간</p>
-                        <p class="tab-price" th:text="${#numbers.formatInteger(peoplenum * ticketH[0].price, 0, 'COMMA') + '원'}"></p>
+                        <p class="tab-price"
+                           th:text="${#numbers.formatInteger(peoplenum * ticketH[0].price, 0, 'COMMA') + '원'}"></p>
                     </button>
                 </section>
                 <!--            <form action="/purchase" method="get">-->
@@ -64,7 +66,7 @@
                                 <p th:text="${ticket.departlocation}" name="departlocation"></p>
                             </div>
                             <div class="ticket-content-middle tk">
-                                <p class="ticket-middle" th:text="${ticket.flighthour + 'hours'}"></p>
+                                <p class="ticket-middle" th:text="${ticket.flighthour + '시간'}"></p>
                                 <p class="ticket-middle">
                                     <img src="/images/6875967_flight_fly_plane_icon.png" alt="비행기">
                                 </p>
@@ -76,7 +78,8 @@
                             </div>
                         </div>
                         <div class="ticket-price">
-                            <p class="ticket-middle" th:text="${'₩' + #numbers.formatInteger((ticket.price * peoplenum), 0, 'COMMA')}">asd</p>
+                            <p class="ticket-middle"
+                               th:text="${'₩' + #numbers.formatInteger((ticket.price * peoplenum), 0, 'COMMA')}">asd</p>
                         </div>
                     </button>
                 </div>
@@ -90,30 +93,53 @@
     </div>
     <div id="content">
         <div class="top-menu">
-            <img src="/images/3512613_boarding pass_flight_journey_plane_ticket_icon.png" alt="검색">
+            <img src="/images/search icon.png" alt="검색">
             <div class="select">
                 <p><span th:text="${ticket[0].departlocation}"></span><span>-</span><span
                         th:text="${ticket[0].arrivallocation}"></span></p>
-                <span>인원 : </span><span class="peoplenum" th:text="${peoplenum}"></span>
-                <div class="dateinfo">
-                    <span th:text="${'출발일 : '+ ticket[0].departdate}"></span>
-                </div>
+                <span>인원 : </span><span class="peoplenum" id="peoplenum1" th:text="${peoplenum}"></span>
+            </div>
+            <div class="dateinfo">
+                <span th:text="${'출발일 : '+ ticket[0].departdate}"></span>
             </div>
         </div>
 
         <div id="userinfo">
             <div class="ticket-info">
                 <div class="ticket-info-span">
-                    <span th:text="${ticket[0].departlocation}"></span><span>-</span><span
+                    <span th:text="${ticket[0].departlocation}"></span><span>-</span ><span
                         th:text="${ticket[0].arrivallocation}"></span><br>
-                    <span>인원 : </span><span class="peoplenum" th:text="${peoplenum}"></span><span> | </span></span><span> 모든 출발/도착 시간은 현지 시간 기준입니다</span>
+                    <span>인원 : </span><span class="peoplenum" th:text="${peoplenum}"></span><span> | </span></span></br>
+                    <span> 모든 출발/도착 시간은 현지 시간 기준입니다</span>
+                </div>
+            </div>
+            <div id="ticket">
+                <img src="/images/AIRLINE.svg" alt="airline">
+                <div id="ticket-list">
+                    <div class="ticket-content-left tk">
+                        <input class="key" name="key"/>
+                        <p class="ticket-left">6시 36뷴</p>
+                        <p name="departlocation">멜버른</p>
+                    </div>
+                    <div class="ticket-content-middle tk">
+                        <p class="ticket-middle">12시간 30분</p>
+                        <p class="ticket-middle">
+                            <img src="/images/6875967_flight_fly_plane_icon.png" alt="비행기">
+                        </p>
+                        <p class="ticket-middle">직항</p>
+                    </div>
+                    <div class="ticket-content-right tk">
+                        <p class="ticket-right">5시30분</p>
+                        <p name="arrivallocation">서울</p>
+                    </div>
                 </div>
             </div>
             <div id="addpeoplenum">
                 <div class="userinfo-inline">
                     <p>사용자 예약정보</p>
                     <div class="userinfo-top">
-                        <p>성<span class="necess">*</span><span class="span-name">이름<span class="necess">*</span></span></p>
+                        <p>성<span class="necess">*</span><span class="span-name">이름<span class="necess">*</span></span>
+                        </p>
                         <input type="text" class="firstname" placeholder="ex)홍" name="first_name">
                         <input type="text" class="lastname" placeholder="ex)길동" name="last_name">
                     </div>
@@ -150,7 +176,8 @@
                         <input type="date" class="duedate" data-placeholder="ex)20320104" required aria-required="true">
                     </div>
                     <div class="userinfo-footer">
-                        <p>연락처<span class="necess">*</span><span class="span-email">이메일<span class="necess">*</span></span>
+                        <p>연락처<span class="necess">*</span><span class="span-email">이메일<span
+                                class="necess">*</span></span>
                         </p>
                         <input type="text" class="phone-num" placeholder="ex)000-0000-0000" name="phonenum">
                         <input type="text" class="email" placeholder="ex)atravel@atravel.com" name="email">

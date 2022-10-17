@@ -58,14 +58,14 @@ input[type='date']:valid::before {
 /* ticket info */
 
 .ticket-info {height: 200px; background-color: white; margin: 40px auto; width:900px; background-image: url(../images/london-bridge.jpg); background-size: 1000px 200px; text-align: left;}
-.ticket-info-span{margin: 50px; font-size: 24px; line-height: 50px; padding: 50px; padding-left: 0;}
+.ticket-info-span{margin: 50px; font-size:24px; line-height: 50px; padding: 20px; padding-left: 0;}
 .ticket-info>.ticket-info-span>span {color: white;}
 
 /* userinfo */
 .necess{color: red;}
 
 #userinfo {width: 1000px; margin: 40px auto; height: 100%; text-align: center; }
-.userinfo-inline {width: 900px; height: 600px; background-color: white; margin: 100px auto;}
+.userinfo-inline {width: 900px;height: 660px;    background-color: white; margin: 70px auto;}
 .userinfo-inline>p{ text-align: left; font-size: 30px; height: 50px; display: inline-block; margin: 40px 0; font-style: bold; font-weight: 500px;}
 .userinfo-inline>div {width: 100%; float: left; margin: 30px 0; }
 .userinfo-inline>div>input {width: 350px; height: 30px;}
@@ -73,7 +73,7 @@ input[type='date']:valid::before {
 .span-name {margin-left: 330px; }
 .span-passex { margin-left: 277px;}
 .span-email {margin-left: 293px;}
-.userinfo-inline>div>div>select {width:350px; height: 30px; float: left; font-size: 18px;  }
+.userinfo-inline>div>div>select {width:353px; height: 30px; float: left; font-size: 18px;  }
 
 .userinfo-inline>div>div {float: left; width: 330px; margin-right: 40px;}
 
@@ -84,7 +84,10 @@ input[type='date']:valid::before {
 
 /* button */
 
-.user_plus>button>img {width: 50px; background-color: none;}
+#ticket>img {
+    width: 160px;
+    float: left;
+}
 .user_plus>button{border: none; background-color:transparent;}
 
 /* bottom-menu */
@@ -99,15 +102,15 @@ hr{border: dashed 1px white; width: 500px; margin:10px 0px;}
 #bottom-menu-outline>p:first-child {font-size: 28px; color: white; padding-bottom: 10px; padding-left: 0;}
 
 #bottom-menu-outline>p>span:first-child {margin-right:280px}
-.span-num {margin-left: 45px;}
+.span-num {margin-left: 16px;}
 .span-tot {margin-left: -10px;}
 /* price tab */
 
 #price-tab { width: 800px; margin: 50px auto; display: inline-block;}
 #span-right {float: right;}
-#br-people {margin-left: 70px;}
-#price {margin-left: 10px;}
-#br-price { margin-left:20px;}
+#br-people {margin-left: 27px}
+
+#br-price { margin-left:8px;}
 
 /* purchase */
 
@@ -128,3 +131,67 @@ hr{border: dashed 1px white; width: 500px; margin:10px 0px;}
 #footer #foot3{ float: left; width: 1000px; height: 100px;}
 #footer #foot3 p {text-align: center; font-size: 14px;}
 
+/* ticket*/
+
+#ticket{ width: 90%;
+    height: 120px;
+    border: 0.5px solid lightgray;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;}
+
+#ticket>#ticket-list>img, .R-ticket>img {
+    width: 160px;
+    float: left;
+}
+.ticket-content-middle img {
+    width: 30px;
+}
+
+#ticket-list { width: 70%;
+    height: 100%;
+    margin-left: 40px;
+    float: left;}
+
+
+.ticket-left, .ticket-right {margin-top: 30px; margin-bottom: 10px;}
+#ticket>#ticket-list>img {width: 180px; float: left;}
+#ticket>#ticket-list>.tk { float: left; width: 120px; height: 140px; }
+#ticket>#ticket-list>div:first-child{margin-left: 100px;}
+#ticket>#ticket-list>.ticket-content-middle {margin: 20px 0;}
+#ticket>#ticket-list>.ticket-content-middle>p {font-size: 16px;}
+#ticket>#ticket-list>.ticket-content-middle>p>img {width: 30px;}
+#ticket p {text-align: center; font-size: 16px; }
+
+
+
+/*R-ticket*/
+
+
+
+.R-ticket{ width: 90%;
+    height: 120px;
+    border: 0.5px solid lightgray;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;}
+
+.R-ticket>.R-ticket-list>img {
+    width: 180px;
+    float: left;
+}
+
+.R-ticket-list { width: 70%;
+    height: 100%;
+    margin-left: 40px;
+    float: left;}
+
+
+/*.ticket-left, .ticket-right {margin-top: 30px; margin-bottom: 10px;}*/
+.R-ticket-list>img {width: 180px; float: left;}
+.R-ticket>.R-ticket-list>.tk { float: left; width: 120px; height: 140px; }
+.R-ticket>.R-ticket-list>div:first-child{margin-left: 100px;}
+.R-ticket>.R-ticket-list>.ticket-content-middle {margin: 20px 0;}
+.R-ticket>.R-ticket-list>.ticket-content-middle>p {font-size: 16px;}
+.R-ticket>.R-ticket-list>.ticket-content-middle>p>img {width: 30px;}
+.R-ticket p {text-align: center; font-size: 16px; }
