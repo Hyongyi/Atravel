@@ -32,6 +32,25 @@ $(document).ready(function () {
     }, 3000);
 
 
+
+    /* 슬라이더 메뉴 */
+    var num=1;
+    setInterval(function(){
+        if(num<3){
+            $('#info_silde>ul').animate({
+                left: '-='+1200
+            },'slow');
+            num++;
+        } else {
+            $('#info_silde>ul').animate({
+                left: 0
+            },'slow');
+            num = 1;
+        }
+    }, 3200);
+
+
+
     window.onload = function () {
         today = new Date();
         console.log("today.toISOString() >>>" + today.toISOString() + 1);
