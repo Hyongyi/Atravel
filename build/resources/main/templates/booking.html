@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/default_layout}">
+
+<!-- index.html 고유 CSS 추가 -->
+<th:block layout:fragment="css">
+    <!--    <link rel="stylesheet" th:href="@{/css/page/home.css}" >-->
+    <link rel="stylesheet" th:href="@{/css/booking.css}">
+    <link rel="stylesheet" th:href="@{/css/purchase.css}">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+</th:block>
+<!-- index.html 고유 스크립트 추가 -->
+<th:block layout:fragment="script">
+    <!--    <script th:src="@{/js/page/home.js}"></script>-->
+    <script th:src="@{https://code.jquery.com/jquery-3.6.0.js}"></script>
+    <script th:src="@{/script/booking.js}"></script>
+    <script th:src="@{/script/purchase.js}"></script>
+</th:block>
+
+<!-- Content -->
+<div layout:fragment="content">
+    <div id="content-book">
+        <div class="top-menu">
+            <img src="/images/search icon.png" alt="검색">
+            <div class="select">
+                <p><span th:text="${ticket[0].departlocation}"></span><span>-</span><span
+                        th:text="${ticket[0].arrivallocation}"></span></p>
+                <span>인원 : </span><span class="peoplenum" id="peoplenum" th:text="${peoplenum}"></span>
+            </div>
+            <div class="dateinfo">
+                <span th:text="${'출발일 : '+ ticket[0].departdate}"></span>
+            </div>
+        </div>
+        <div>
+            <div id="itinery-list">
+                <section id="section-tab">
+                    <button type="submit" id="recommendation">
+                        <p>추천순</p>
+                        <p class="tab-price"
+                           th:text="${#numbers.formatInteger(peoplenum * ticket[0].price, 0, 'COMMA') + '원'}"></p>
+                    </button>
+                    <button type="submit" id="cheapest">
+                        <p>최저가</p>
+                        <p class="tab-price"
+                           th:text="${#numbers.formatInteger(peoplenum * ticket[0].price, 0, 'COMMA') + '원'}"></p>
+                    </button>
+                    <button type="submit" id="shortest">
+                        <p>최단여행시간</p>
+                        <p class="tab-price"
+                           th:text="${#numbers.formatInteger(peoplenum * ticketH[0].price, 0, 'COMMA') + '원'}"></p>
+                    </button>
+                </section>
+                <!--            <form action="/purchase" method="get">-->
+                <div class="itinery">
+                    <button type="submit" class="ticket" th:each="ticket : ${ticket}">
+                        <div class="ticket-list">
+                            <img src="/images/AIRLINE.svg" alt="airline">
+                            <div class="ticket-content-left tk">
+                                <input class="key" name="key" th:value="${ticket.id}"/>
+                                <p class="ticket-left" th:text="${ticket.departtime}"></p>
+                                <p th:text="${ticket.departlocation}" name="departlocation"></p>
+                            </div>
+                            <div class="ticket-content-middle tk">
+                                <p class="ticket-middle" th:text="${ticket.flighthour + '시간'}"></p>
+                                <p class="ticket-middle">
+                                    <img src="/images/6875967_flight_fly_plane_icon.png" alt="비행기">
+                                </p>
+                                <p class="ticket-middle">직항</p>
+                            </div>
+                            <div class="ticket-content-right tk">
+                                <p class="ticket-right" th:text="${ticket.arrivaltime}"></p>
+                                <p th:text="${ticket.arrivallocation}" name="arrivallocation"></p>
+                            </div>
+                        </div>
+                        <div class="ticket-price">
+                            <p class="ticket-middle"
+                               th:text="${'₩' + #numbers.formatInteger((ticket.price * peoplenum), 0, 'COMMA')}">asd</p>
+                        </div>
+                    </button>
+                </div>
+                <!--            </form>-->
+            </div>
+        </div>
+        <div id="content-bottom">
+            <p>요금은 매일 갱신됩니다.<span> 예약 시기에 따라 비행기 요금이 달라질 수 있습니다. </span></p>
+            <p>체크인 수하물이 있습니까? <span> 예약 시기에 따라 비행기 요금이 달라질 수 있습니다.</span></p>
+        </div>
+    </div>
+    <div id="content">
+        <div class="top-menu">
+            <img src="/images/search icon.png" alt="검색">
+            <div class="select">
+                <p><span th:text="${ticket[0].departlocation}"></span><span>-</span><span
+                        th:text="${ticket[0].arrivallocation}"></span></p>
+                <span>인원 : </span><span class="peoplenum" id="peoplenum1" th:text="${peoplenum}"></span>
+            </div>
+            <div class="dateinfo">
+                <span th:text="${'출발일 : '+ ticket[0].departdate}"></span>
+            </div>
+        </div>
+
+        <div id="userinfo">
+            <div class="ticket-info">
+                <div class="ticket-info-span">
+                    <span th:text="${ticket[0].departlocation}"></span><span>-</span ><span
+                        th:text="${ticket[0].arrivallocation}"></span><br>
+                    <span>인원 : </span><span class="peoplenum" th:text="${peoplenum}"></span><span> | </span></span></br>
+                    <span> 모든 출발/도착 시간은 현지 시간 기준입니다</span>
+                </div>
+            </div>
+            <div id="ticket">
+                <img src="/images/AIRLINE.svg" alt="airline">
+                <div id="ticket-list">
+                    <div class="ticket-content-left tk">
+                        <input class="key" name="key"/>
+                        <p class="ticket-left">6시 36뷴</p>
+                        <p name="departlocation">멜버른</p>
+                    </div>
+                    <div class="ticket-content-middle tk">
+                        <p class="ticket-middle">12시간 30분</p>
+                        <p class="ticket-middle">
+                            <img src="/images/6875967_flight_fly_plane_icon.png" alt="비행기">
+                        </p>
+                        <p class="ticket-middle">직항</p>
+                    </div>
+                    <div class="ticket-content-right tk">
+                        <p class="ticket-right">5시30분</p>
+                        <p name="arrivallocation">서울</p>
+                    </div>
+                </div>
+            </div>
+            <div id="addpeoplenum">
+                <div class="userinfo-inline">
+                    <p>사용자 예약정보</p>
+                    <div class="userinfo-top">
+                        <p>성<span class="necess">*</span><span class="span-name">이름<span class="necess">*</span></span>
+                        </p>
+                        <input type="text" class="firstname" placeholder="ex)홍" name="first_name">
+                        <input type="text" class="lastname" placeholder="ex)길동" name="last_name">
+                    </div>
+                    <div class="userinfo-middle">
+                        <div>
+                            <p>성별<span class="necess">*</span></p>
+                            <select name="sex" class="sex">
+                                <option value="male">남</option>
+                                <option value="female">여</option>
+                            </select>
+                            <p class="warning">성별을 입력해주세요.</p>
+                        </div>
+                        <div>
+                            <p>국적<span class="necess">*</span></p>
+                            <select name="nationality" class="nationality">
+                                <option value="southkorea">대한민국</option>
+                                <option value="america">미국</option>
+                                <option value="japan">일본</option>
+                                <option value="china">중국</option>
+                                <option value="france">프랑스</option>
+                                <option value="italy">이탈리아</option>
+                                <option value="philp">필리핀</option>
+                                <option value="maleysia">말레이시아</option>
+                                <option value="british">영국</option>
+                                <option value="vietnam">베트남</option>
+                                <option value="tailand">태국</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="userinfo-bottom">
+                        <p>여권번호<span class="necess">*</span><span class="span-passex">여권 유효기간<span
+                                class="necess">*</span></span></p>
+                        <input type="text" class="passport" placeholder="ex)M123*****" name="passport">
+                        <input type="date" class="duedate" data-placeholder="ex)20320104" required aria-required="true">
+                    </div>
+                    <div class="userinfo-footer">
+                        <p>연락처<span class="necess">*</span><span class="span-email">이메일<span
+                                class="necess">*</span></span>
+                        </p>
+                        <input type="text" class="phone-num" placeholder="ex)000-0000-0000" name="phonenum">
+                        <input type="text" class="email" placeholder="ex)atravel@atravel.com" name="email">
+                    </div>
+                </div>
+            </div>
+
+            <div id="bottom-menu">
+                <div id="bottom-menu-outline">
+                    <p>요금 상세정보</p>
+                    <p><span>탑승객</span><span class="span-right span-num" th:text="${peoplenum + '명'}"></span></p>
+                    <p><span>항공운임</span><span class="span-right" id="price"></span></p>
+                    <hr>
+                    <p id="total"><span>총 금액</span><span class="span-right span-tot" id="totalprice"></span></p>
+                </div>
+            </div>
+            <button id="purchase">결제하기</button>
+        </div>
+    </div>
+    </form>
+
+</div>
+</html>
+
+

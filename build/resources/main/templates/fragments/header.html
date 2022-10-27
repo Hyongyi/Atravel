@@ -1,0 +1,54 @@
+<html lagn="ko" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<!--headerFragment 선언-->
+<div th:fragment="headerFragment">
+    <div id="top_head">
+        <div class="wrap">
+            <a sec:authorize="isAnonymous()" th:href="@{/user/signin}">로그인</a>
+            <a sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a>
+            <a sec:authorize="isAnonymous()" th:href="@{/user/signup}">회원가입</a>
+            <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/admin}">어드민</a>
+        </div>
+    </div>
+    <header id="header" class="clearfix">
+        <div id="header-logo">
+            <a href="/"><img src="/images/A TRAVEL 로고.svg" alt="로고"></a>
+        </div>
+        <div class="header_wrap">
+            <nav id="menu">
+                <div class="nav_bg"></div>
+                <ul>
+                    <li><a href="#">항공</a>
+                        <ul class="submenu">
+                            <li><a href="#">국내여행</a></li>
+                            <li><a href="#">해외여행</a></li>
+                            <li><a href="#">제주도</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">숙박</a>
+                        <ul class="submenu">
+                            <li><a href="#">국내</a></li>
+                            <li><a href="#">해외</a></li>
+                            <li><a href="#">제주도</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">투어/티켓</a>
+                        <ul class="submenu">
+                            <li><a href="#">액티비티</a></li>
+                            <li><a href="#">페스티벌</a></li>
+                            <li><a href="#">투어정보</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a href="#">고객센터</a>
+                        <ul class="submenu">
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">1:1 문의</a></li>
+                            <li><a href="#">자주묻는 질문</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+</div>
+</html>

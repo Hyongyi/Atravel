@@ -1,0 +1,145 @@
+/*초기화 */
+
+*{margin: 0; padding: 0; color: #333333;font-family: 'Noto Sans KR';}
+a{text-decoration: none;  }
+li{list-style: none;}
+.clearfix::before, .clearfix::after{display: table; content: ''; clear: both;}
+button {border: none;}
+
+/* 페이지 레이아웃 */
+.wrap { width: 1200px; margin: 0 auto; height: 100%}
+.wrap_banner{ width: 1200px; height: 600px; margin: 0 auto;  position: relative;}
+.header_wrap { width: 1200px; margin: 0 auto; position: relative; height: 100px; z-index: 10;}
+
+
+/* header */
+#header{width: 100%;}
+#top_head {width: 100%; height: 25px; background-color: rgb(246, 245, 245); margin: 0 auto;}
+#top_head>.wrap>a {font-size: 16px;float: right; padding-right: 50px;}
+
+/* logo */
+#header-logo{ width: 1200px; text-align: center; margin: 20px auto;}
+#header-logo>a>img{height: 100px;}
+/* menu */
+
+/* #menu{width: 100%;    float: right; background-color: #00005e;}
+#menu>ul{width: 100%; text-align: center; }
+#menu>ul>li{width: 25%; float: left; position: relative;}
+#menu>ul>li>a{display: block; width: 100%; height: 50px; line-height: 50px; font-size: 24px; color: #fff;}
+#menu>ul>li:hover>a{background-color: rgba(0, 0, 0, 0.4);}
+#menu>ul>li:first-child>a{}
+
+#menu>ul>li>ul.submenu{width: 100%;  line-height: 40px; position: absolute; left: 0; top: 50px; display: none; }
+#menu>ul>li>ul.submenu>li{width: 100%; height: 40px;}
+#menu>ul>li>ul.submenu>li>a{display: block; width: 100%; height: 100%;color: #fff; font-size: 20px;}
+#menu>ul>li>ul.submenu>li:hover>a{background-color: rgba(0, 0, 0, 0.4);}
+
+#menu .nav_bg{width: 100%; height: 160px; background-color: rgba(0, 0, 0, 0.2); position: absolute; left: 10; top: 50px; display: none;} */
+
+
+/* top menu */
+.top-menu {width: 100%; height: 70px; background-color:  #00005e; }
+.top-menu>img {width: 40px; float: left; margin: 15px; }
+.top-menu>.select {width: 300px;  float: left; font-size: 18px; padding: 10px 5px;}
+.top-menu>div span{color: white;}
+
+
+/* dateinfo*/
+.dateinfo {
+    float: right;
+    font-size: 18px;
+    padding: 10px 5px;
+    width: 200px;
+    margin-left: 300px;}
+
+
+/* content */
+#content{display: none}
+#content-book{width: 1000px; height:100%; margin: 0 auto; }
+#content-bottom { margin-left: 40px; width: 100%; height: 100px; float: left; margin-top: 50px;}
+#content-bottom>p{font-size: 18px; margin: 5px; line-height: 30px;}
+#content-bottom>p>span { font-size: 16px;}
+
+/* section tab */
+#itinery-list>#section-tab{width: 100%; height: 100px;  margin: 40px 0; }
+#itinery-list>#section-tab>button {width: 33.33%; height: 100px; background-color: #ebebeb; float: left;  border: none; }
+#itinery-list>#section-tab>button>p:first-child { font-size: 14px; text-align: left; margin-left: 40px; margin-bottom: 20px; height: 10px;}
+#itinery-list>#section-tab>button>.tab-price{text-align:center; font-size: 20px; }
+
+
+/* itinery */
+
+.itinery {width: 1000px; height: 100%;}
+
+#itinery-list {width: 100%; height: 100%; float: left; }
+
+/* ticket */
+
+.ticket{ margin: 20px 30px; border-radius: 15px; width: 95%; height: 140px;  float: left; background-color: white;}
+.ticket-list {width: 700px; background-color:#6eb5de; height: 100%; border-radius: 15px; float: left;}
+
+
+.ticket-left, .ticket-right {margin-top: 30px; margin-bottom: 10px;}
+.ticket>.ticket-list>img {width: 180px; float: left;}
+.ticket>.ticket-list>.tk { float: left; width: 120px; height: 140px; }
+.ticket>.ticket-list>div:first-child{margin-left: 100px;}
+.ticket>.ticket-list>.ticket-content-middle {margin: 25px 0;}
+.ticket>.ticket-list>.ticket-content-middle>p {font-size: 16px;}
+.ticket>.ticket-list>.ticket-content-middle>p>img {width: 50px;}
+.ticket p {text-align: center; font-size: 20px; }
+
+
+.ticket-price {font-size: 24px;  height: 140px; float: left; width: 250px; background-color: rgb(205, 240, 240); border-radius: 15px;  text-align: center; }
+
+.ticket-price p { border-left: #6a6a6a 3px dashed; height: 120px; line-height: 110px; margin-top: 10px; font-weight: 800px; font-size: 22px;}
+
+/* ticket-round */
+
+.ticket-round{ margin: 20px 30px; border-radius: 15px; width: 95%; height: 210px;  float: left; background-color: white;}
+
+.ticketR-left, .ticketR-right {margin-top: 5px; margin-bottom: 10px;}
+.ticket-round>.ticket-list>img {width: 180px; float: left; margin-top: 30px;}
+.ticket-round>.ticket-list>.tkR { float: left; width: 150px; height: 100px; margin-top: 10px;}
+.ticket-round>.ticket-list>div:first-child{margin-left: 100px;}
+.ticket-round>.ticket-list>.ticket-content-middle {margin: 5px 0;}
+.ticket-round>.ticket-list>.ticket-content-middle>p {font-size: 16px;}
+.ticket-round>.ticket-list>.ticket-content-middle>p>img {width:35px;}
+.ticket-round p {text-align: center; font-size: 20px; }
+
+.ticket-price-round {font-size: 24px;  height: 210px; float: left; width: 250px; background-color: rgb(205, 240, 240); border-radius: 15px;  text-align: center; }
+
+.ticket-price-round p { border-left: #6a6a6a 3px dashed; height: 190px; line-height: 180px; margin-top: 10px; font-weight: 800px; font-size: 22px;}
+#return {transform: scaleX(-1);}
+
+
+/*none*/
+
+#none {line-height: 130px; font-size: 24px; height: 100px;}
+#home { margin-top: 0; line-height: 0; }
+
+
+/*key*/
+
+.key, .key1, .key2{display: none}
+
+/* footer */
+
+#footer{ width: 100%; height: 200px; background-color: #b3b3b3; float: left; min-width: 1200px; margin-top: 100px;}
+#footer #foot1{width: 1000px; height: 100px; float: left; }
+#footer-img {margin-left: 300px; width: 100%; }
+#footer #foot1 img {width: 50px; margin:25px 50px; float: left;  }
+
+
+#footer #foot2{ width: 200px; height: 100px;float: right;}
+#foot2 #family_select{margin: 100px;}
+#footer #foot3{ float: left; width: 1000px; height: 100px;}
+#footer #foot3 p {text-align: center; font-size: 14px;}
+
+
+/* warning */
+
+.warning {
+    display: none;
+    color: red;
+    text-align: left;
+}

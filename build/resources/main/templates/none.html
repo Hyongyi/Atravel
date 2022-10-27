@@ -1,0 +1,80 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/default_layout}">
+
+<!-- index.html 고유 CSS 추가 -->
+<th:block layout:fragment="css">
+    <!--    <link rel="stylesheet" th:href="@{/css/page/home.css}" >-->
+    <title>항공편 검색</title>
+    <link rel="stylesheet" th:href="@{/css/booking.css}">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+</th:block>
+<!-- index.html 고유 스크립트 추가 -->
+<th:block layout:fragment="script">
+    <!--    <script th:src="@{/js/page/home.js}"></script>-->
+    <script th:src="@{https://code.jquery.com/jquery-3.6.0.js}"></script>
+    <script th:src="@{/script/none.js}"></script>
+
+</th:block>
+
+<!-- Content -->
+<div layout:fragment="content">
+    <div id="content-book">
+        <div class="top-menu">
+            <img src="/images/search icon.png" alt="검색">
+            <div class="select">
+                <p><span th:text="${'출발지 : ' + depart}"></span><span>-</span><span th:text="${'도착지 : ' + arrival}">제주도</span></p>
+                <span th:text="${'인원 : ' + peoplenum}"></span>
+            </div>
+            <div class="dateinfo">
+                <span th:text="${'출발일 : '+ departdate}"></span>
+            </div>
+        </div>
+        <form action="/" method="get">
+            <div id="itinery-list">
+                <section id="section-tab">
+                    <button type="submit" id="recommendation">
+                        <p>추천순</p>
+                        <p class="tab-price"></p>
+                    </button>
+                    <button type="submit" id="cheapest">
+                        <p>최저가</p>
+                        <p class="tab-price" ></p>
+                    </button>
+                    <button type="submit" id="shortest">
+                        <p>최단여행시간</p>
+                        <p class="tab-price" ></p>
+                    </button>
+                </section>
+                <div class="itinery">
+                    <button type="submit" class="ticket" >
+                        <div class="ticket-list">
+                            <p id="none">예약가능한 항공권이 존재하지 않습니다.</p>
+                            <p id="home">*클릭하면 이전으로 돌아갑니다.</p>
+                        </div>
+                        <div class="ticket-price">
+                            <p class="ticket-middle" ></p>
+                        </div>
+
+                    </button>
+                </div>
+            </div>
+        </form>
+        <div id="content-bottom">
+            <p>요금은 매일 갱신됩니다.<span> 예약 시기에 따라 비행기 요금이 달라질 수 있습니다. </span></p>
+            <p>체크인 수하물이 있습니까? <span> 예약 시기에 따라 비행기 요금이 달라질 수 있습니다.</span></p>
+        </div>
+    </div>
+</div>
+</html>
+
+
+
+
