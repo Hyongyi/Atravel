@@ -1,4 +1,8 @@
+
+
 $(document).ready(function () {
+
+
 
     $(".service-box").hover( function () {
         $(this).find("h2").css("color", "white");
@@ -67,6 +71,8 @@ $(document).ready(function () {
         console.log("today >>>> " + today);
         bir = document.getElementById("input-deaprt-date");
         bir.value = today;
+
+
     }
 
     $("#swap").click(function () {

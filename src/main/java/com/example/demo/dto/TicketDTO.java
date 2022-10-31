@@ -16,12 +16,11 @@ public class TicketDTO {
     private String nationality;
     private String passportno;
     private String passportexpire;
-    private int age;
     private String sex;
     private String phonenum;
-    private String email;
+    private String age;
     private String userinfo_id;  // 유저인포의 id 값 결제자 정보
-    private String travelinfo_boookingno;  //비행기 티켓의 내용
+    private long travelinfo_boookingno;  //비행기 티켓의 내용
 
 
 }

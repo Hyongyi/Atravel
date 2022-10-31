@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/default_layout}">
+
+<!-- index.html 고유 CSS 추가 -->
+<th:block layout:fragment="css">
+    <!--    <link rel="stylesheet" th:href="@{/css/page/home.css}" >-->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/result.css}">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+</th:block>
+<!-- index.html 고유 스크립트 추가 -->
+<th:block layout:fragment="script">
+    <!--    <script th:src="@{/js/page/home.js}"></script>-->
+    <script th:src="@{https://code.jquery.com/jquery-3.6.0.js}"></script>
+    <script th:src="@{/script/common.js}"></script>
+    <script th:src="@{/script/style.js}"></script>
+    <script th:src="@{/script/result.js}"></script>
+    <script src="https://tistory4.daumcdn.net/tistory/3134841/skin/images/confetti_v2.js"></script>
+</th:block>
+
+<!-- Content -->
+<div layout:fragment="content">
+
+    <div class="result-wrap">
+        <div class="congratulation">
+            <p id="confirm-booking">
+                예약이 완료되었습니다!
+            </p>
+        </div>
+    </div>
+
+    <p id="chkBooking">예약이 잘 됐는지 궁금하시다면? <a href="/user/info">확인하러 가기</a></p>
+    <div style="display:none;">
+        <button class="canvasBtn" id="stopButton">꽃멈춤</button>
+        <button class="canvasBtn" id="startButton">꽃시작</button>
+    </div>
+    <canvas id="canvas"></canvas>
+</div>
+</html>
+
+

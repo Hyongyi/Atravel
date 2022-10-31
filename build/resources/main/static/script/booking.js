@@ -1,7 +1,7 @@
 $(document).ready(function () {
+
+
     $(".header_wrap").remove();
-
-
     // var people1 = $(".peoplenum").text();
     // console.log(people1)
     console.log(key)
@@ -63,8 +63,8 @@ $(document).ready(function () {
                 <img src="/images/AIRLINE.svg" alt="airline">
                 <div id="ticket-list">
                     <div class="ticket-content-left tk">
-                        <input class="key" name="key"/>
-                        <p class="ticket-left">${obj[0].departtime}</p>
+                        <input class="key" name="key" value="${obj[0].id}"/>
+                        <p class="ticket-left slicetime">${obj[0].departtime}</p>
                         <p name="departlocation">${obj[0].departlocation}</p>
                     </div>
                     <div class="ticket-content-middle tk">
@@ -75,7 +75,7 @@ $(document).ready(function () {
                         <p class="ticket-middle">직항</p>
                     </div>
                     <div class="ticket-content-right tk">
-                        <p class="ticket-right">${obj[0].arrivaltime}</p>
+                        <p class="ticket-right slicetime">${obj[0].arrivaltime}</p>
                         <p name="arrivallocation">${obj[0].arrivallocation}</p>
                     </div>
                 </div>
@@ -131,8 +131,8 @@ $(document).ready(function () {
                 <img src="/images/AIRLINE.svg" alt="airline">
                 <div class="R-ticket-list">
                     <div class="ticket-content-left tk">
-                        <input class="key" name="key"/>
-                        <p class="ticket-left">${obj[0].departtime}</p>
+                        <input class="key" name="key" value="${obj[0].id}"/>
+                        <p class="ticket-left slicetime">${obj[0].departtime}</p>
                         <p name="departlocation">${obj[0].departlocation}</p>
                     </div>
                     <div class="ticket-content-middle tk">
@@ -143,7 +143,7 @@ $(document).ready(function () {
                         <p class="ticket-middle">직항</p>
                     </div>
                     <div class="ticket-content-right tk">
-                        <p class="ticket-right">${obj[0].arrivaltime}</p>
+                        <p class="ticket-right slicetime">${obj[0].arrivaltime}</p>
                         <p name="arrivallocation">${obj[0].arrivallocation}</p>
                     </div>
                 </div>
@@ -155,20 +155,20 @@ $(document).ready(function () {
                     <img src="/images/AIRLINE.svg" alt="airline">
                      <div class="R-ticket-list">
                         <div class="ticket-content-left tk">
-                         <input class="key" name="key"/>
-                            <p class="ticket-left">${obj[1].departtime}</p>
-                            <p name="departlocation">${obj[1].departlocation}</p>
+                         <input class="key" name="key" value="${obj[1].id}"/>
+                            <p class="ticket-left slicetime">${obj[1].arrivaltime}</p>
+                            <p name="departlocation">${obj[1].arrivallocation}</p>
                     </div>
                     <div class="ticket-content-middle tk">
                         <p class="ticket-middle">${obj[1].flighthour + ' 시간'}</p>
                         <p class="ticket-middle">
-                            <img src="/images/6875967_flight_fly_plane_icon.png" alt="비행기">
+                            <img src="/images/6875967_flight_fly_plane_icon.png" alt="비행기" style="transform: scaleX(-1);">
                         </p>
                         <p class="ticket-middle">직항</p>
                     </div>
                       <div class="ticket-content-right tk">
-                         <p class="ticket-right">${obj[1].arrivaltime}</p>
-                         <p name="arrivallocation">${obj[1].arrivallocation}</p>
+                         <p class="ticket-right slicetime">${obj[1].departtime}</p>
+                         <p name="arrivallocation">${obj[1].departlocation}</p>
                         </div>
                     </div>
                 </div>
@@ -201,6 +201,12 @@ function addComma(value) {
     value = value.toLocaleString();
     return value;
 }
+
+function SliceTime(value) {
+    value = value.substring(0.5);
+    return value;
+}
+
 
 
 // $("#price1").text(data);

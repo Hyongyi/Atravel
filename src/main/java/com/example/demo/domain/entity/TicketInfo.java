@@ -34,7 +34,7 @@ public class TicketInfo {
     private String passportexpire;
 
     @Column(nullable = false)
-    private int age;
+    private String age;
 
     @Column(length = 200, nullable = false)
     private String sex;
@@ -43,14 +43,11 @@ public class TicketInfo {
     private String phonenum;
 
     @Column(length = 200, nullable = false)
-    private String email;
-
-    @Column(length = 200, nullable = false)
     private String userinfo_id;
 
 
     @Column(length = 200, nullable = false)
-    private String travelinfo_boookingno;
+    private long travelinfo_boookingno;
 
 
 }

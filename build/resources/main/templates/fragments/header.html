@@ -6,7 +6,7 @@
             <a sec:authorize="isAnonymous()" th:href="@{/user/signin}">로그인</a>
             <a sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a>
             <a sec:authorize="isAnonymous()" th:href="@{/user/signup}">회원가입</a>
-            <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/admin}">어드민</a>
+            <a sec:authorize="isAuthenticated()" sec:authentication="name" th:href="@{/user/info}" class="user_id"></a>
         </div>
     </div>
     <header id="header" class="clearfix">
@@ -50,5 +50,6 @@
             </nav>
         </div>
     </header>
+
 </div>
 </html>

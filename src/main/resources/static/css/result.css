@@ -1,0 +1,32 @@
+
+.congratulation {
+    width: 100%;
+    height: 250px;
+    background-color: #ddebff;
+    border-radius: 20px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.result-wrap {
+    width: 1200px;
+    height: 100%;
+    margin:30px auto 60px;
+}
+
+#confirm-booking {
+    line-height: 230px;
+    font-size: 44px;
+    font-weight: 800;
+}
+
+#chkBooking {
+    font-size: 20px;
+    text-align: center;
+}
+
+
+#chkBooking {margin-bottom: 70px}
+p>a{color:#2f10f6; }
+p>a:hover{color:#0c0058; text-decoration: underline;}
+

@@ -102,8 +102,8 @@ hr{border: dashed 1px white; width: 500px; margin:10px 0px;}
 #bottom-menu-outline>p:first-child {font-size: 28px; color: white; padding-bottom: 10px; padding-left: 0;}
 
 #bottom-menu-outline>p>span:first-child {margin-right:280px}
-.span-num {margin-left: 16px;}
-.span-tot {margin-left: -10px;}
+.span-num {margin-left: 17px;}
+.span-tot {margin-left: -8px;}
 /* price tab */
 
 #price-tab { width: 800px; margin: 50px auto; display: inline-block;}
@@ -115,6 +115,7 @@ hr{border: dashed 1px white; width: 500px; margin:10px 0px;}
 /* purchase */
 
 #purchase {width: 200px; height: 70px; border-radius: 20px; font-size: 24px; background-color: rgb(214, 214, 214); border: none; margin-top: 30px;}
+#rt-purchase {width: 200px; height: 70px; border-radius: 20px; font-size: 24px; background-color: rgb(214, 214, 214); border: none; margin-top: 30px;}
 
 
 
@@ -160,8 +161,8 @@ hr{border: dashed 1px white; width: 500px; margin:10px 0px;}
 #ticket>#ticket-list>div:first-child{margin-left: 100px;}
 #ticket>#ticket-list>.ticket-content-middle {margin: 20px 0;}
 #ticket>#ticket-list>.ticket-content-middle>p {font-size: 16px;}
-#ticket>#ticket-list>.ticket-content-middle>p>img {width: 30px;}
-#ticket p {text-align: center; font-size: 16px; }
+#ticket>#ticket-list>.ticket-content-middle>p>img {width: 80px;}
+#ticket p {text-align: center; font-size: 18px; }
 
 
 
@@ -193,5 +194,5 @@ hr{border: dashed 1px white; width: 500px; margin:10px 0px;}
 .R-ticket>.R-ticket-list>div:first-child{margin-left: 100px;}
 .R-ticket>.R-ticket-list>.ticket-content-middle {margin: 20px 0;}
 .R-ticket>.R-ticket-list>.ticket-content-middle>p {font-size: 16px;}
-.R-ticket>.R-ticket-list>.ticket-content-middle>p>img {width: 30px;}
+.R-ticket>.R-ticket-list>.ticket-content-middle>p>img {width: 80px;}
 .R-ticket p {text-align: center; font-size: 16px; }
