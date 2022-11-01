@@ -34,8 +34,31 @@
             </p>
         </div>
     </div>
-
-    <p id="chkBooking">예약이 잘 됐는지 궁금하시다면? <a href="/user/info">확인하러 가기</a></p>
+    <h1 style="text-align: center">예약 내역</h1>
+    <div id="result">
+        <img src="/images/AIRLINE.svg" alt="airline">
+        <div id="ticket-list">
+            <div class="ticket-content-left tk">
+                <p class="ticket-left">6시 36뷴</p>
+                <p name="departlocation">멜버른</p>
+            </div>
+            <div class="ticket-content-middle tk">
+                <p class="ticket-middle">12시간 30분</p>
+                <p class="ticket-middle">
+                    <img src="/images/6875967_flight_fly_plane_icon.png" alt="비행기">
+                </p>
+                <p class="ticket-middle">직항</p>
+            </div>
+            <div class="ticket-content-right tk">
+                <p class="ticket-right">5시30분</p>
+                <p name="arrivallocation">서울</p>
+            </div>
+        </div>
+    </div>
+    <div class="result-wrap">
+    <button type="button"  id="home" onclick="location.href='/'; ">홈으로</button>
+    </div>
+    <!--    <p id="chkBooking">예약이 잘 됐는지 궁금하시다면? <a href="/user/info">확인하러 가기</a></p>-->
     <div style="display:none;">
         <button class="canvasBtn" id="stopButton">꽃멈춤</button>
         <button class="canvasBtn" id="startButton">꽃시작</button>

@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.domain.entity.TicketInfo;
+import com.example.demo.domain.entity.UserInfo;
 import com.example.demo.domain.repository.TicketInfoRepository;
 import com.example.demo.domain.repository.TravelInfoRepository;
 import com.example.demo.domain.repository.UserInfoRepository;
@@ -28,7 +29,7 @@ public class ResController {
     TravelInfoRepository travelInfoRepository;
 
     @Autowired
-    private TicketInfoRepository ticketInfoRepository;
+    TicketInfoRepository ticketInfoRepository;
 
 
     //    회원가입
@@ -68,9 +69,9 @@ public class ResController {
                     .nationality(obj1.get("nationality").toString())
                     .passportno(obj1.get("passportno").toString())
                     .passportexpire(obj1.get("passportexpire").toString())
-                    .travelinfo_boookingno(Long.parseLong(String.valueOf(obj1.get("travelinfo_boookingno"))))
+                    .travelinfoBoookingno(Long.parseLong(String.valueOf(obj1.get("travelinfo_boookingno"))))
                     .phonenum(obj1.get("phonenum").toString())
-                    .userinfo_id(obj1.get("userinfo_id").toString())
+                    .userinfoId(obj1.get("userinfo_id").toString())
                     .build();
 
             tickets.add(ticket);
@@ -127,9 +128,9 @@ public class ResController {
                     .nationality(obj1.get("nationality").toString())
                     .passportno(obj1.get("passportno").toString())
                     .passportexpire(obj1.get("passportexpire").toString())
-                    .travelinfo_boookingno(Long.parseLong(String.valueOf(temp1.get(0))))
+                    .travelinfoBoookingno(Long.parseLong(String.valueOf(temp1.get(0))))
                     .phonenum(obj1.get("phonenum").toString())
-                    .userinfo_id(obj1.get("userinfo_id").toString())
+                    .userinfoId(obj1.get("userinfo_id").toString())
                     .build();
 
             tickets.add(ticket);
@@ -146,9 +147,9 @@ public class ResController {
                     .nationality(obj1.get("nationality").toString())
                     .passportno(obj1.get("passportno").toString())
                     .passportexpire(obj1.get("passportexpire").toString())
-                    .travelinfo_boookingno(Long.parseLong(String.valueOf(temp1.get(1))))
+                    .travelinfoBoookingno(Long.parseLong(String.valueOf(temp1.get(1))))
                     .phonenum(obj1.get("phonenum").toString())
-                    .userinfo_id(obj1.get("userinfo_id").toString())
+                    .userinfoId(obj1.get("userinfo_id").toString())
                     .build();
 
             tickets.add(ticket);
@@ -199,5 +200,19 @@ public class ResController {
         return joined;
     }
 
+
+    @PostMapping("/result")
+    public List<Object> GoResult(@RequestParam String userinfo_id) {
+        List<Object> ticket = ticketInfoRepository.searchBooking(userinfo_id);
+        System.out.println("검색 결과: " + ticket);
+        return ticket;
+    }
+
+    @PostMapping("/GetUserInfo")
+    public Optional<UserInfo> GetInfo(@RequestParam String userinfo_id) {
+        Optional<UserInfo> myInfo = userInfoRepository.findById(userinfo_id);
+        System.out.println("검색 결과: " + myInfo);
+        return myInfo;
+    }
 
 }

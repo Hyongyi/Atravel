@@ -56,7 +56,7 @@ public class SecurityConfig  {
                 .tokenRepository(tokenRepository())
                 .and()
                 .csrf()
-                .ignoringAntMatchers("/purchaseTicket", "/purchaseRTTicket")
+                .ignoringAntMatchers("/purchaseTicket", "/purchaseRTTicket", "/result", "/GetUserInfo")
                 .and()
                 .authorizeRequests()
                 .antMatchers("/**").permitAll()
@@ -68,7 +68,7 @@ public class SecurityConfig  {
                 .and() // 로그인 설정
                 .formLogin()
                 .loginPage("/user/signin")
-                .defaultSuccessUrl("/user/signin/result")
+                .defaultSuccessUrl("/")
                 .usernameParameter("id")
                 .passwordParameter("password")
                 .failureUrl("/user/denied")

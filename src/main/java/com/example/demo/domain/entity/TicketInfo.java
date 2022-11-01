@@ -43,11 +43,10 @@ public class TicketInfo {
     private String phonenum;
 
     @Column(length = 200, nullable = false)
-    private String userinfo_id;
-
+    private String userinfoId;
 
     @Column(length = 200, nullable = false)
-    private long travelinfo_boookingno;
+    private long travelinfoBoookingno;
 
 
 }

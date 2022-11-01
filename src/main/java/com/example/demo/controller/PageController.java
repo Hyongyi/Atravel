@@ -1,6 +1,8 @@
 package com.example.demo.controller;
 
 
+import com.example.demo.domain.entity.TicketInfo;
+import com.example.demo.domain.repository.TicketInfoRepository;
 import com.example.demo.domain.repository.TravelInfoRepository;
 import com.example.demo.dto.UserDTO;
 import com.example.demo.service.TravelInfoService;
@@ -22,6 +24,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @AllArgsConstructor

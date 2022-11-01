@@ -14,7 +14,6 @@ li{list-style: none;}
   display: none;
   color: red;
   text-align: left;
-  margin-left: 90px;
   margin-bottom: 10px;
 }
 
@@ -37,9 +36,9 @@ label>span{ color: red}
 /* content */
 #content{width: 100%; height:100%; margin: 50px auto; }
 #inner-content{width: 600px ; margin: 0 auto; text-align: center;}
-#inner-content div{width: 100%; margin: 0 auto; text-align: center;}
-#inner-content>div>input{ width: 400px; height: 35px; margin: 15px 0; border-radius: 10px; border: #797979 1px solid; font-size: 20px; padding-left: 15px;}
-#inner-content>div>label{font-weight: 800; margin-right: 320px; font-size: 20px;}
+#inner-content div{width: 100%; text-align: left; margin-left: 70px;}
+#inner-content>div>input{ width: 450px; height: 40px; margin: 15px 0; border-radius: 10px; border: #797979 1px solid; font-size: 20px; padding-left: 15px;}
+#inner-content>div>label{font-weight: 800; font-size: 22px;}
 #inner-content>#signup{margin: 0px 0 40px; width:70%; height: 60px; border-radius: 15px; border: #797979 1px solid; font-size: 26px; background-color: #0c0058; color: white;}
 p>a{color:#2f10f6; }
 p>a:hover{color:#0c0058; text-decoration: underline;}
@@ -49,11 +48,17 @@ p>a:hover{color:#0c0058; text-decoration: underline;}
   transform: scale(0.99);
 }
 
-
+/*input 세부 사항 조정 */
+#inner-content #sample6_postcode {width: 150px;}
+#inner-content #searchAddress {width: 150px; padding: 0;  background-color: #0c0058; color: white;}
+#inner-content #sample6_extraAddress{width: 150px}
+#inner-content #sample6_address{width: 50%}
+div#address>input {margin: 5px 0;}
+div#address {margin-bottom: 10px;}
 /* radio */
 
 .checks {position: relative; width: 100%; }
-#inner-content>.checks>div{float: left; width: 200px; height: 50px; margin: 0 50px;  padding-top: 30px;}
+#inner-content>.checks>div{float: left; width: 200px; height: 50px; margin: 0 30px;  padding-top: 30px;}
 .checks>div>label{margin-left: 0px; font-size: 20px;}
 .checks input[type="radio"] {
   position: absolute;
@@ -120,3 +125,4 @@ p>a:hover{color:#0c0058; text-decoration: underline;}
 #foot2 #family_select{margin: 100px;}
 #footer #foot3{ float: left; width: 1000px; height: 100px;}
 #footer #foot3 p {text-align: center; font-size: 14px;}
+

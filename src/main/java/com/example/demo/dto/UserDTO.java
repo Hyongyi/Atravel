@@ -7,6 +7,7 @@ import com.example.demo.domain.entity.UserInfo;
 import com.sun.istack.NotNull;
 import lombok.*;
 
+import javax.persistence.Column;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
@@ -41,10 +42,21 @@ public class UserDTO {
             message = "이름을 제대로 입력해주세요.")
 
     private String name;
-
-
+    
     @NotNull
-    private Long age;
+    private String age;
+
+    @NotEmpty(message = "주소를 입력해주세요.")
+    @NotNull
+    @NotBlank(message ="주소를 입력해주세요.")
+    private String addressCode;
+
+    private String address;
+
+    private String addressDetail;
+
+    private String addressRef;
+    
 
     @NotEmpty(message = "성별을 입력해주세요.")
     @NotNull
@@ -63,17 +75,26 @@ public class UserDTO {
                 .name(this.name)
                 .sex(this.sex)
                 .age(this.age)
+                .address(this.address)
+                .addressCode(this.addressCode)
+                .addressDetail(this.addressDetail)
+                .addressRef(this.addressRef)
                 .build();
     }
 
     @Builder
-    public UserDTO(Long UserNum,String id, String password, String name, long age, String sex) {
+    public UserDTO(Long UserNum,String id, String password, String name, String age, String sex, String addressCode, String address, String addressDetail, String addressRef) {
         this.UserNum = UserNum;
         this.id = id;
         this.name = name;
         this.password = password;
         this.age =age;
         this.sex = sex;
+        this.addressCode = addressCode;
+        this.address = address;
+        this.addressDetail = addressDetail;
+        this.addressRef = addressRef;
+
 
     }
 }
