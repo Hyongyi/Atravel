@@ -96,6 +96,7 @@ $(document).ready(function () {
 
     $("#one-way").click(function () {
         $("#return-date").hide();
+        $("#formId").attr("action", "/booking");
     })
 
     $("#search").click( function () {
@@ -107,6 +108,10 @@ $(document).ready(function () {
         } else if ($("#arrivals").val() === null || $("#arrivals").val() === "" || $("#arrivals").val() === undefined) {
             $("#arrivals").css("border-color", "red")
             $(".warning").html("도착지를 선택해주세요.")
+            $(".warning").css('display', 'block')
+        } else if ($("#input-deaprt-date").val() === null || $("#input-deaprt-date").val() === "" || $("#input-deaprt-date").val() === undefined) {
+            $("#input-deaprt-date").css("border-color", "red")
+            $(".warning").html("출발일을 선택해주세요.")
             $(".warning").css('display', 'block')
         } else if (check) {
             if($("#input-return-date").val() === null || $("#input-return-date").val() === "" || $("#input-return-date").val() === undefined){

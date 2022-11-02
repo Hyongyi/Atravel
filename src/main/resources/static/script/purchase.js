@@ -71,7 +71,7 @@ $(document).ready(function () {
                 sex: sex[i],
                 phonenum: phonenum[i],
                 travelinfo_boookingno: travelinfo_boookingno[i],
-                userinfo_id: $(".user_id").text()
+                userinfo_id: $(".user_id").text().slice(0, -1)
             }
 
             ticketinfo.push(data);
@@ -173,7 +173,7 @@ $(document).ready(function () {
                 sex: sex[i],
                 phonenum: phonenum[i],
                 // travelinfo_boookingno: travelinfo_boookingno[i],
-                userinfo_id: $(".user_id").text()
+                userinfo_id: $(".user_id").text().slice(0, -1)
             }
             ticketinfo.push(data);
         }

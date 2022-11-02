@@ -1,11 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>내정보</title>
-</head>
-<body>
-<h1>내정보 확인 페이지입니다.</h1>
-<hr>
-</body>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/default_layout}">
+
+<!-- index.html 고유 CSS 추가 -->
+<th:block layout:fragment="css">
+    <!--    <link rel="stylesheet" th:href="@{/css/page/home.css}" >-->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/result.css}">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+</th:block>
+<!-- index.html 고유 스크립트 추가 -->
+<th:block layout:fragment="script">
+    <!--    <script th:src="@{/js/page/home.js}"></script>-->
+    <script th:src="@{https://code.jquery.com/jquery-3.6.0.js}"></script>
+    <script th:src="@{/script/common.js}"></script>
+    <script th:src="@{/script/style.js}"></script>
+    <script th:src="@{/script/myInfo.js}"></script>
+
+</th:block>
+
+<!-- Content -->
+<div layout:fragment="content">
+
+    <div class="myInfo">
+        <h1 style="text-align: center">내 정보</h1>
+        <div class="myInfo-box">
+            <p>이름</p>
+            <span id="name"></span>
+            <p>비밀번호</p>
+            <input type="password" id="pw">
+            <p>생년월일</p>
+            <span id="birth"></span>
+            <p>성별</p>
+            <span id="sex"></span>
+        </div>
+    </div>
+    <h1 style="text-align: center">예약 내역</h1>
+    <div id="result">
+        <img src="/images/AIRLINE.svg" alt="airline">
+        <div id="ticket-list">
+            <div class="ticket-content-left tk">
+                <p class="ticket-left">6시 36뷴</p>
+                <p name="departlocation">멜버른</p>
+            </div>
+            <div class="ticket-content-middle tk">
+                <p class="ticket-middle">12시간 30분</p>
+                <p class="ticket-middle">
+                    <img src="/images/6875967_flight_fly_plane_icon.png" alt="비행기">
+                </p>
+                <p class="ticket-middle">직항</p>
+            </div>
+            <div class="ticket-content-right tk">
+                <p class="ticket-right">5시30분</p>
+                <p name="arrivallocation">서울</p>
+            </div>
+        </div>
+    </div>
+    <div class="result-wrap">
+        <button type="button" id="home" onclick="location.href='/'; ">홈으로</button>
+    </div>
+
+</div>
 </html>
+
+

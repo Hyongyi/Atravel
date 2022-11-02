@@ -21,6 +21,7 @@
     <script th:src="@{/script/signup.js}"></script>
     <script th:src="@{/script/js.cookie.js}"></script>
     <script th:src="@{/script/common.js}"></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </th:block>
 
 <!-- Content -->
@@ -51,9 +52,18 @@
                     <p class="warning">이름을 입력하세요.</p>
                 </div>
                 <div id="age">
-                    <label for="age"><span>*</span>나이</label><br>
-                    <input type="text" id="input-age" name="age">
-                    <p class="warning">나이를 입력하세요.</p>
+                    <label for="age"><span>*</span>생년월일</label><br>
+                    <input type="date" id="input-age" name="age">
+                    <p class="warning">생년월일을 입력하세요.</p>
+                </div>
+                <div id="address">
+                    <label for="sample6_postcode"><span>*</span>주소</label><br>
+                    <input type="text" id="sample6_postcode" placeholder="우편번호" name="addressCode">
+                    <input type="button" id="searchAddress"  onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+                    <input type="text" id="sample6_address" name="address" placeholder="주소"><br>
+                    <input type="text" id="sample6_detailAddress" name="addressDetail" placeholder="상세주소"><br>
+                    <input type="text" id="sample6_extraAddress" name="addressRef" placeholder="참고항목">
+                    <p class="warning">주소를 입력하세요.</p>
                 </div>
                 <div class="checks">
                     <label for="sex" id="sex"><span>*</span>성별</label><br>

@@ -3,7 +3,7 @@
 <div th:fragment="headerFragment">
     <div id="top_head">
         <div class="wrap">
-            <a sec:authorize="isAnonymous()" th:href="@{/user/signin}">로그인</a>
+            <a sec:authorize="isAnonymous()"  th:href="@{/user/signin}">로그인</a>
             <a sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a>
             <a sec:authorize="isAnonymous()" th:href="@{/user/signup}">회원가입</a>
             <a sec:authorize="isAuthenticated()" sec:authentication="name" th:href="@{/user/info}" class="user_id"></a>
