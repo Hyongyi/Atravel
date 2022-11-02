@@ -64,7 +64,7 @@ $(document).ready(function () {
                 <div id="ticket-list">
                     <div class="ticket-content-left tk">
                         <input class="key" name="key" value="${obj[0].id}"/>
-                        <p class="ticket-left slicetime">${obj[0].departtime}</p>
+                        <p class="ticket-left slicetime">${obj[0].departtime.substring(0,5)}</p>
                         <p name="departlocation">${obj[0].departlocation}</p>
                     </div>
                     <div class="ticket-content-middle tk">
@@ -75,7 +75,7 @@ $(document).ready(function () {
                         <p class="ticket-middle">직항</p>
                     </div>
                     <div class="ticket-content-right tk">
-                        <p class="ticket-right slicetime">${obj[0].arrivaltime}</p>
+                        <p class="ticket-right slicetime">${obj[0].arrivaltime.substring(0,5)}</p>
                         <p name="arrivallocation">${obj[0].arrivallocation}</p>
                     </div>
                 </div>
@@ -132,7 +132,7 @@ $(document).ready(function () {
                 <div class="R-ticket-list">
                     <div class="ticket-content-left tk">
                         <input class="key" name="key" value="${obj[0].id}"/>
-                        <p class="ticket-left slicetime">${obj[0].departtime}</p>
+                        <p class="ticket-left slicetime">${obj[0].departtime.substring(0,5)}</p>
                         <p name="departlocation">${obj[0].departlocation}</p>
                     </div>
                     <div class="ticket-content-middle tk">
@@ -143,7 +143,7 @@ $(document).ready(function () {
                         <p class="ticket-middle">직항</p>
                     </div>
                     <div class="ticket-content-right tk">
-                        <p class="ticket-right slicetime">${obj[0].arrivaltime}</p>
+                        <p class="ticket-right slicetime">${obj[0].arrivaltime.substring(0,5)}</p>
                         <p name="arrivallocation">${obj[0].arrivallocation}</p>
                     </div>
                 </div>
@@ -156,7 +156,7 @@ $(document).ready(function () {
                      <div class="R-ticket-list">
                         <div class="ticket-content-left tk">
                          <input class="key" name="key" value="${obj[1].id}"/>
-                            <p class="ticket-left slicetime">${obj[1].arrivaltime}</p>
+                            <p class="ticket-left slicetime">${obj[1].arrivaltime.substring(0,5)}</p>
                             <p name="departlocation">${obj[1].arrivallocation}</p>
                     </div>
                     <div class="ticket-content-middle tk">
@@ -167,7 +167,7 @@ $(document).ready(function () {
                         <p class="ticket-middle">직항</p>
                     </div>
                       <div class="ticket-content-right tk">
-                         <p class="ticket-right slicetime">${obj[1].departtime}</p>
+                         <p class="ticket-right slicetime">${obj[1].departtime.substring(0,5)}</p>
                          <p name="arrivallocation">${obj[1].departlocation}</p>
                         </div>
                     </div>
@@ -203,9 +203,10 @@ function addComma(value) {
 }
 
 function SliceTime(value) {
-    value = value.substring(0.5);
+    value = value.slice(0, 5);
     return value;
 }
+
 
 
 

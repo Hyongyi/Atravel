@@ -63,7 +63,7 @@ p>a:hover{color:#0c0058; text-decoration: underline;}
     margin-left: 40px;
     float: left;}
 
-.ticket-left, .ticket-right {margin-top: 50px; margin-bottom: 10px;}
+/*.ticket-left, .ticket-right {margin-top: 50px; margin-bottom: 10px;}*/
 #ticket>#ticket-list>img {width: 180px; float: left;}
 #ticket>#ticket-list>.tk { float: left; width: 220px; height: 180px; }
 #ticket>#ticket-list>div:first-child{margin-left: 100px;}
@@ -144,3 +144,6 @@ p>a:hover{color:#0c0058; text-decoration: underline;}
 
 #pw { width: 150px;
     height: 30px;}
+
+.ticket-content-left>p:first-child, .ticket-content-right>p:first-child{
+    margin-top: 40px;}

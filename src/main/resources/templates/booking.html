@@ -65,7 +65,7 @@
                                 <img src="/images/AIRLINE.svg" alt="airline">
                                 <div class="ticket-content-left tk">
                                     <input class="key" name="ticketNo" th:value="${ticket.id}"/>
-                                    <p class="ticket-left slicetime" th:text="${ticket.departtime}"></p>
+                                    <p class="ticket-left slicetime" th:text="${#strings.substring(ticket.departtime, 0 ,5)}"></p>
                                     <p th:text="${ticket.departlocation}" name="departlocation"></p>
                                 </div>
                                 <div class="ticket-content-middle tk">
@@ -76,7 +76,7 @@
                                     <p class="ticket-middle">직항</p>
                                 </div>
                                 <div class="ticket-content-right tk">
-                                    <p class="ticket-right slicetime" th:text="${ticket.arrivaltime}"></p>
+                                    <p class="ticket-right slicetime" th:text="${#strings.substring(ticket.arrivaltime, 0,5)}"></p>
                                     <p th:text="${ticket.arrivallocation}" name="arrivallocation"></p>
                                 </div>
                             </div>

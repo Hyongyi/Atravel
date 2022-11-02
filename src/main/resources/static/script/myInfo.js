@@ -70,7 +70,8 @@ $(document).ready(function () {
                 <img src="/images/AIRLINE.svg" alt="airline">
                 <div id="ticket-list">
                     <div class="ticket-content-left tk">
-                        <p class="ticket-left slicetime">${item.departtime}</p>
+                        <p class="ticket-left slicetime">${item.departdate}</p>
+                        <p class="ticket-left slicetime">${item.departtime.substring(0,5)}</p>
                         <p name="departlocation">${item.departlocation}</p>
                     </div>
                     <div class="ticket-content-middle tk">
@@ -81,7 +82,8 @@ $(document).ready(function () {
                         <p class="ticket-middle">직항</p>
                     </div>
                     <div class="ticket-content-right tk">
-                        <p class="ticket-right slicetime">${item.arrivaltime}</p>
+                         <p class="ticket-right slicetime">${item.arrivaldate}</p>
+                        <p class="ticket-right slicetime">${item.arrivaltime.substring(0,5)}</p>
                         <p name="arrivallocation">${item.arrivallocation}</p>
                     </div>
                 </div>

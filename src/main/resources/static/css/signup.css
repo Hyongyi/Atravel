@@ -21,7 +21,7 @@ li{list-style: none;}
 label>span{ color: red}
 
 /* header */
-.header_wrap { width: 800px; margin: 0 auto; border-bottom: #b3b3b3 3px solid;;}
+.header_wrap { width: 800px; margin: 0 auto; }
 
 /* header */
 #header{width: 100%;}

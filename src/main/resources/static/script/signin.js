@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $("#menu").remove();
+    // $("#menu").remove();
     $("#id").focusout(function () {
         console.log('ss')
         var chkid = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;

@@ -206,3 +206,7 @@ $(document).ready(function () {
 
 });
 
+function SliceTime(value) {
+    value = value.substring(0.5);
+    return value;
+}

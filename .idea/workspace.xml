@@ -4,20 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ccd77ab8-bd3f-43c5-8862-a2dd522e5098" name="Changes" comment="v 0.1.7 결제 티켓 보여주기 기능 추가 &amp; 마이페이지 추가">
+    <list default="true" id="ccd77ab8-bd3f-43c5-8862-a2dd522e5098" name="Changes" comment="v 0.1.8 결제 티켓 보여주기 기능 추가 &amp; 마이페이지 추가">
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/static/css/general.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/css/general.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/static/css/signup.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/css/signup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/static/script/booking.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/script/booking.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/static/script/purchase.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/script/purchase.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/static/script/signin.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/script/signin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/static/script/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/script/signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/myinfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/myinfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/booking.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/booking.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/fragments/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/page.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/signin.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/signin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/general.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/general.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/result.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/result.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/signup.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/signup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/script/booking.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/script/booking.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/script/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/script/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/script/myInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/script/myInfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/script/purchase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/script/purchase.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/script/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/script/style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/script/result.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/script/result.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/script/signin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/script/signin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/script/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/script/signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/booking.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/booking.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/page.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/signin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/signin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/signup.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,29 +77,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/USER/IdeaProjects/erp_Project",
-    "list.type.of.created.stylesheet": "CSS",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "show.run.dashboard.notification": "false",
-    "spring.configuration.checksum": "a77b80b908f2415ce8a9011ef23a2ad4"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/USER/IdeaProjects/erp_Project&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;show.run.dashboard.notification&quot;: &quot;false&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;a77b80b908f2415ce8a9011ef23a2ad4&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.demo.config" />
@@ -172,6 +192,7 @@
       <workItem from="1666853904617" duration="16835000" />
       <workItem from="1666932211315" duration="18178000" />
       <workItem from="1667175163734" duration="51013000" />
+      <workItem from="1667348462284" duration="6864000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1665324188502</created>
@@ -250,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667292256160</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="v 0.1.8 결제 티켓 보여주기 기능 추가 &amp; 마이페이지 추가">
+      <created>1667348520627</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1667348520627</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,7 +305,8 @@
     <MESSAGE value="v 0.1.5 서비스 추가" />
     <MESSAGE value="v 0.1.6 여러명 insert 기능 추가" />
     <MESSAGE value="v 0.1.7 결제 티켓 보여주기 기능 추가 &amp; 마이페이지 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="v 0.1.7 결제 티켓 보여주기 기능 추가 &amp; 마이페이지 추가" />
+    <MESSAGE value="v 0.1.8 결제 티켓 보여주기 기능 추가 &amp; 마이페이지 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="v 0.1.8 결제 티켓 보여주기 기능 추가 &amp; 마이페이지 추가" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
