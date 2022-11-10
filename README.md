@@ -10,6 +10,13 @@
 3. 관계형 DB 구성 및 유효 데이터를 집어넣어 항공권 티켓을 띄워줌
 4. Thymeleaf와 Ajax 방식을 병행
 
+개발 언어 :
+-Html5
+-Css3
+-SpringBoot JPA
+-Js/jQeury
+-MySql
+
 주요 화면
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/20ee0c96-aa00-4367-8509-bccae21ca7c3/Untitled.png)
+![Untitled](https://user-images.githubusercontent.com/102146170/201071312-b69a16cc-a8ab-4a70-8017-6112013fea14.png)
