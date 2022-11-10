@@ -13,11 +13,11 @@ html,css 를 이용해서 웹디자인부터 기능구현까지 온전히 혼자
 4. Thymeleaf와 Ajax 방식을 병행
 <br/>
 개발 언어 :<br/>
--Html5<br/>
--Css3<br/>
--SpringBoot JPA<br/>
--Js/jQeury<br/>
--MySql<br/>
+● Html5<br/>
+● Css3<br/>
+● SpringBoot JPA<br/>
+● Js/jQeury<br/>
+● MySql<br/>
 <br/>
 메인 화면
 
