@@ -22,3 +22,7 @@ html,css 를 이용해서 웹디자인부터 기능구현까지 온전히 혼자
 메인 화면
 
 ![Untitled](https://user-images.githubusercontent.com/102146170/201071312-b69a16cc-a8ab-4a70-8017-6112013fea14.png)
+
+
+시연 영상
+https://youtu.be/bsvNkvHIwAo
